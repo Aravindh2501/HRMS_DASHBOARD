@@ -2,31 +2,20 @@ import { Grid } from "@mui/material";
 import {
   RiArrowDownLine,
   RiArrowUpLine,
-  RiCarLine,
-  RiCashLine,
   RiCheckLine,
   RiCoupon2Line,
-  RiCurrencyLine,
-  RiDiscountPercentLine,
-  RiHandbagLine,
   RiProjector2Line,
   RiTreeLine,
-  RiUser2Line,
-  RiUserLine,
 } from "@remixicon/react";
 import React from "react";
 // import { VectorMap } from "@south-paw/react-vector-maps";
 import {
-  AreaChart,
-  Area,
   XAxis,
   YAxis,
   Tooltip,
   ResponsiveContainer,
   PieChart,
   Pie,
-  // Legend,
-  // Sector,
   Cell,
 } from "recharts";
 import { BarChart, Bar, CartesianGrid, Legend } from "recharts";
@@ -35,7 +24,6 @@ import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { DateCalendar } from "@mui/x-date-pickers/DateCalendar";
 import Calendar from "../Calendar/Calendar";
-import Profile from "../Leave/AllLeaveRequest";
 
 // Define colors for the chart
 const COLORS = ["#0088FE", "#FF8042", "#00C49F", "#FFBB28"];
@@ -126,7 +114,7 @@ const UseruserOverview = () => {
             />
             <div className="useroverview_text">
               <h3>Welcome Back, Shanrin 👋 </h3>
-              <p>Manage your Sales Easy With Us</p>
+              <p>Have a Great Day and Keep Smiling! 😊</p>
             </div>
           </div>
         </Grid>

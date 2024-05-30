@@ -111,7 +111,7 @@ const Overview = () => {
             />
             <div className="overview_text">
               <h3>Welcome Back, Shanrin 👋 </h3>
-              <p>Manage your Sales Easy With Us</p>
+              <p>Have a Great Day and Keep Smiling! 😊</p>
             </div>
           </div>
         </Grid>
@@ -143,7 +143,7 @@ const Overview = () => {
               <div className="overview_text_value">
                 <div>
                   <h3>
-                    <span>12</span>
+                    <span>10</span>
                   </h3>
                   <p>New Employee</p>
                 </div>
