@@ -14,8 +14,8 @@ const Sidebar = ({ handleMenu, open }) => {
     <div className="sidebar">
       <div className="side_top">
         <div className="logo_img">
-          <img src={logo} alt="Logo" className="logo" />
-          <p className={`logo_text ${!open ? "collapsed" : ""}`}>kodukku</p>
+          <img src="https://cdn.freebiesupply.com/logos/large/2x/dashboard-confessional-logo-png-transparent.png" alt="Logo" className="logo" />
+          <p className={`logo_text ${!open ? "collapsed" : ""}`}>Dashboard</p>
         </div>
       </div>
       <div className="side_middle">

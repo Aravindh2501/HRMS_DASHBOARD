@@ -38,7 +38,7 @@ const Topbar = () => {
   return (
     <div className="topbar">
       <div className="top_left">
-        <h2>Sales Management</h2>
+        <h2>HRMS Dashboard</h2>
       </div>
       <div className="top_right">
         <button className="top_notfi" onClick={handleFullscreenToggle}>
