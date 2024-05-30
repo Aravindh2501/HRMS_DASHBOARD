@@ -1,0 +1,97 @@
+.project {
+  .project_top {
+    .card {
+      .project_head {
+        text-align: center;
+        h3 {
+          font-size: 1.5em;
+          margin: 0;
+        }
+        p {
+          font-size: 1em;
+          color: $text-grey;
+        }
+      }
+    }
+  }
+
+  .project_content {
+    .card {
+      position: relative;
+      margin-top: 3rem;
+      .project_icon {
+        position: absolute;
+        top: -26px;
+        left: 42%;
+        background: $lg-blue;
+        border-radius: 19%;
+        padding: 10px 10px 6px 10px;
+        .project_icon_card {
+          fill: $blue;
+        }
+      }
+      .card_top {
+        h4 {
+          font-size: 1.25em;
+          margin: 1em 0 1em 0;
+          text-align: center;
+          font-weight: 500;
+        }
+        p {
+          margin: 0.5em 0;
+          color: $bg-black;
+          &.description {
+            display: -webkit-box;
+            -webkit-line-clamp: 2; /* Limit to 3 lines */
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+          }
+          &.date,
+          &.priority {
+            font-weight: 500;
+            span {
+              font-weight: normal;
+              color: $text-grey;
+            }
+          }
+        }
+      }
+
+      .card_bottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 1em;
+
+        .project_avatar {
+          .MuiAvatarGroup-root {
+            display: flex;
+          }
+        }
+
+        .project_progressbar {
+          width: 100%;
+          max-width: 150px;
+          margin-left: 1em;
+          background-color: $input-bg;
+          border-radius: 4px;
+          overflow: hidden;
+          box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
+            rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+          .MuiLinearProgress-root {
+            height: 8px;
+            border-radius: 4px;
+          }
+
+          .MuiLinearProgress-barColorPrimary {
+            background-color: $blue;
+          }
+
+          .MuiLinearProgress-colorPrimary {
+            background-color: $input-bg;
+          }
+        }
+      }
+    }
+  }
+}

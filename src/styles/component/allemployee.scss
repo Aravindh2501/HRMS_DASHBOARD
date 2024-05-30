@@ -1,0 +1,93 @@
+.allemployee {
+  .card {
+    .allemployee_search {
+      .allemployee_filter_table {
+        border: 1px solid $border;
+        margin-top: 1rem;
+        border-radius: 14px;
+
+        .allemployee_filter {
+          padding: 10px;
+
+          .allemployee_filter_input {
+            .allemployee_input {
+              padding: 10px 10px;
+            }
+          }
+
+          .allemployee_datepicker {
+            .css-o9k5xi-MuiInputBase-root-MuiOutlinedInput-root {
+              background-color: $input-bg;
+              border-radius: 0.5rem;
+              height: 45px;
+            }
+            .css-i4bv87-MuiSvgIcon-root {
+              fill: $text-grey;
+            }
+            .css-1d3z3hw-MuiOutlinedInput-notchedOutline {
+              border: 1px solid $border;
+            }
+          }
+          .allemployee-addproduct {
+            display: flex;
+            justify-content: end;
+            .allemployee_addbtn {
+              display: flex;
+              align-items: center;
+              background: $blue;
+              border-radius: 8px;
+              padding: 10px 29px;
+              color: $bg-white;
+              font-weight: 500;
+              .icon {
+                margin-right: 8px;
+                fill: $bg-white;
+              }
+            }
+          }
+        }
+
+        .allemployee_table {
+          .MuiTableCell-head {
+            border-top: 1px solid $border;
+            border-bottom: 1px solid $border !important;
+            font-weight: 600;
+          }
+
+          .MuiTableRow-root:last-child .MuiTableCell-root {
+            border-bottom: none;
+          }
+
+          .allemployee_action_buttons {
+            display: flex;
+            button {
+              padding: 5px;
+              margin-right: 5px;
+              .allemployee_icon_edit {
+                fill: $blue;
+              }
+              .allemployee_icon_delete {
+                fill: $red;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.allemployee_datepicker {
+  margin-top: 10px !important;
+  .css-o9k5xi-MuiInputBase-root-MuiOutlinedInput-root {
+    background-color: $input-bg;
+    border-radius: 0.5rem;
+    height: 45px;
+  }
+  .css-i4bv87-MuiSvgIcon-root {
+    fill: $text-grey;
+  }
+  .css-1d3z3hw-MuiOutlinedInput-notchedOutline {
+    border: 1px solid $border;
+  }
+}

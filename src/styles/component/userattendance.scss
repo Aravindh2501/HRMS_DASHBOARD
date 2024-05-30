@@ -1,0 +1,87 @@
+.userattendance {
+  .card {
+    .userattendance_search {
+      .userattendance_head {
+        h2 {
+          font-size: 24px;
+          margin-bottom: 16px;
+        }
+      }
+
+      .userattendance_filter-table {
+        border: 1px solid $border;
+        margin-top: 1rem;
+        border-radius: 14px;
+
+        .userattendance_filter {
+          padding: 10px;
+
+          .userattendance_filter-input {
+            .userattendance_input {
+              padding: 10px;
+              width: 100%;
+              border: 1px solid $border;
+              border-radius: 0.5rem;
+            }
+          }
+        }
+
+        .userattendance_table {
+          .MuiTableCell-head {
+            border-top: 1px solid $border;
+            border-bottom: 1px solid $border !important;
+            font-weight: 600;
+          }
+
+          .MuiTableRow-root:last-child .MuiTableCell-root {
+            border-bottom: none;
+          }
+
+          .userattendance_action-buttons {
+            display: flex;
+            button {
+              padding: 5px;
+              margin-right: 5px;
+              .userattendance_icon_close {
+                fill: $red;
+              }
+              .userattendance_icon_check {
+                fill: $green;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.userattendance {
+  .status {
+    padding: 3px 9px;
+    border-radius: 6px;
+    display: inline-block;
+    font-weight: bold;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  }
+
+  .status-present {
+    color: $green;
+    background-color: $lg-green;
+  }
+
+  .status-absent {
+    color: $red;
+    background-color: $lg-red;
+  }
+
+  .status-leave {
+    color: $orange;
+    background-color: $lg-orange;
+  }
+
+  .status-half-day {
+    color: $blue;
+    background-color: $lg-blue;
+  }
+}

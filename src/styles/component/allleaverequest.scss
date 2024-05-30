@@ -1,0 +1,83 @@
+.allleaverequest {
+  .card {
+    .allleaverequest_search {
+      .allleaverequest_head {
+        h2 {
+          font-size: 24px;
+          margin-bottom: 16px;
+        }
+      }
+
+      .allleaverequest_filter-table {
+        border: 1px solid $border;
+        margin-top: 1rem;
+        border-radius: 14px;
+
+        .allleaverequest_filter {
+          padding: 10px;
+
+          .allleaverequest_filter-input {
+            .allleaverequest_input {
+              padding: 10px;
+              width: 100%;
+              border: 1px solid $border;
+              border-radius: 0.5rem;
+            }
+          }
+        }
+
+        .allleaverequest_table {
+          .MuiTableCell-head {
+            border-top: 1px solid $border;
+            border-bottom: 1px solid $border !important;
+            font-weight: 600;
+          }
+
+          .MuiTableRow-root:last-child .MuiTableCell-root {
+            border-bottom: none;
+          }
+
+          .allleaverequest_action-buttons {
+            display: flex;
+            button {
+              padding: 5px;
+              margin-right: 5px;
+              .allleaverequest_icon_close {
+                fill: $red;
+              }
+              .allleaverequest_icon_check {
+                fill: $green;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.allleaverequest {
+  .status {
+    padding: 3px 9px;
+    display: inline-block;
+    border: 1px solid;
+    border-radius: 6px;
+    font-weight: 500;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  }
+
+  .status-approved {
+    color: $green;
+    border-color: $green;
+  }
+
+  .status-rejected {
+    color: $red;
+    border-color: $red;
+  }
+
+  .status-pending {
+    color: $orange;
+    border-color: $orange;
+  }
+}

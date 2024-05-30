@@ -1,0 +1,152 @@
+.useroverview {
+  //   .card {
+  .useroverview_birthday {
+    .card {
+      background-image: url("../../assets//images/hr-dashboard.png");
+      background-repeat: no-repeat;
+      background-position: top;
+      background-size: cover;
+      display: flex;
+      justify-content: space-between;
+      .useroverview_birth_text {
+        display: flex;
+        align-items: center;
+        img {
+          width: 4.5rem;
+          border-radius: 50%;
+        }
+        .useroverview_birth_head {
+          margin-left: 1rem;
+          h4 {
+            margin: 0;
+          }
+          p {
+            margin: 0;
+          }
+        }
+      }
+      .useroverview_cake {
+        margin-top: 1rem;
+        img {
+          width: 4rem;
+        }
+      }
+    }
+  }
+
+  .over_profile {
+    display: flex;
+    align-items: center;
+    height: 100%;
+
+    .over_profile_img {
+      width: 5rem;
+      border-radius: 50%;
+    }
+  }
+  .useroverview_text {
+    margin-left: 1rem;
+    h3 {
+      font-weight: 800;
+      font-size: 2rem;
+    }
+    p {
+    }
+  }
+  .useroverview_card_text {
+    .useroverview_text_value {
+      display: flex;
+      justify-content: space-between;
+      h3 {
+        span {
+          font-weight: 500;
+          font-size: 2.2rem;
+        }
+      }
+      p {
+      }
+      .useroverview_icon {
+        border-radius: 8px;
+        height: 3rem;
+        width: 3rem;
+        display: grid;
+        place-items: center;
+        &.over_icon1 {
+          background: $lg-red;
+        }
+        &.over_icon2 {
+          background: $lg-green;
+        }
+        &.over_icon3 {
+          background: $lg-purple;
+        }
+        &.over_icon4 {
+          background: $lg-yellow;
+        }
+        &.over_icon5 {
+          background: $lg-blue;
+        }
+        &.over_icon6 {
+          background: $lg-orange;
+        }
+        .useroverview_icon_img {
+          &.icon1 {
+            fill: $red;
+          }
+          &.icon2 {
+            fill: $green;
+          }
+          &.icon3 {
+            fill: $purple;
+          }
+          &.icon4 {
+            fill: $yellow;
+          }
+          &.icon5 {
+            fill: $blue;
+          }
+          &.icon6 {
+            fill: $orange;
+          }
+        }
+      }
+    }
+    .useroverview_text_arrow {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 6px 10px;
+      border-radius: 8px;
+      background: $bg-grey;
+      margin-top: 1rem;
+      color: $green;
+      p {
+        color: $green;
+        &.over_value {
+          color: $bg-black;
+          font-weight: 500;
+        }
+      }
+      .useroverview_value_arrow {
+        display: flex;
+        align-items: center;
+        p {
+          margin-right: 8px;
+          .icon-red {
+            fill: $red;
+          }
+          .icon-green {
+            fill: $green;
+          }
+        }
+      }
+    }
+  }
+  .calender-event {
+    .css-1rtg91x-MuiDateCalendar-root {
+      height: 309px;
+      width: 100%;
+    }
+  }
+  //   }
+}
