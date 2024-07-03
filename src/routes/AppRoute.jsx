@@ -1,6 +1,6 @@
 // src/components/AppRoute.js
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import { ROUTES } from "../constants/routeConstants";
 import Main from "../layouts/Main";
 import NoPageFound from "../components/NoPageFound";
@@ -14,7 +14,6 @@ import Login from "../auth/Login";
 import UserOverview from "../components/Overview/UserOverview";
 import UserAttendance from "../components/Attendance/UserAttendance";
 import PrivateRoute from "./PrivateRoute";
-import MyProject from "../components/Project/MyProject";
 
 const routeConfig = [
   { path: ROUTES.LOGIN, element: <Login /> },
@@ -79,14 +78,6 @@ const routeConfig = [
           </PrivateRoute>
         ),
       },
-      {
-        path: ROUTES.USER_PROJECT,
-        element: (
-          <PrivateRoute role="user">
-            <MyProject />
-          </PrivateRoute>
-        ),
-      },
     ],
   },
   { path: "*", element: <NoPageFound /> },
@@ -96,6 +87,7 @@ const AppRoute = () => {
   return (
     <Router>
       <Routes>
+        <Route path="/" element={<Navigate to={ROUTES.LOGIN} />} />
         {routeConfig.map((route) => (
           <Route key={route.path} path={route.path} element={route.element}>
             {route.children &&
