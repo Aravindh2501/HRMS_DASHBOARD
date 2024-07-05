@@ -53,17 +53,15 @@ const Login = () => {
                     style={{ left: getSlidePosition() }}
                   />
                   <li
-                    className={`login_btn_change ${
-                      activeLogin === "admin" ? "active" : ""
-                    }`}
+                    className={`login_btn_change ${activeLogin === "admin" ? "active" : ""
+                      }`}
                     onClick={handleAdminLogin}
                   >
                     Admin Login
                   </li>
                   <li
-                    className={`login_btn_change ${
-                      activeLogin === "employee" ? "active" : ""
-                    }`}
+                    className={`login_btn_change ${activeLogin === "employee" ? "active" : ""
+                      }`}
                     onClick={handleEmployeeLogin}
                   >
                     Employee Login

@@ -1,3 +1,4 @@
+import React, { useState, useEffect } from "react";
 import { Grid } from "@mui/material";
 import {
   RiArrowDownLine,
@@ -7,8 +8,6 @@ import {
   RiUser2Line,
   RiUserLine,
 } from "@remixicon/react";
-import React from "react";
-// import { VectorMap } from "@south-paw/react-vector-maps";
 import {
   AreaChart,
   Area,
@@ -18,87 +17,99 @@ import {
   ResponsiveContainer,
   PieChart,
   Pie,
-  // Legend,
-  // Sector,
   Cell,
 } from "recharts";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { DateCalendar } from "@mui/x-date-pickers/DateCalendar";
 import Calendar from "../Calendar/Calendar";
-import AllLeaveRequest from "../Leave/AllLeaveRequest";
+import Box from '@mui/material/Box';
+import Modal from '@mui/material/Modal';
+import { useNavigate } from "react-router";
+import { ROUTES } from "../../constants/routeConstants";
 
-// Define colors for the chart
+const style = {
+  position: 'absolute',
+  top: '50%',
+  left: '50%',
+  transform: 'translate(-50%, -50%)',
+  width: 400,
+  bgcolor: 'background.paper',
+  border: 'none',
+  boxShadow: 24,
+  p: 4,
+  borderRadius: "14px",
+};
+
 const COLORS = ["#0088FE", "#FF8042", "#00C49F", "#FFBB28"];
-
-// Mock data for attendance status
 const attendanceData = [
-  { name: "Present", value: 120 }, // Example: total present days
-  { name: "Absent", value: 40 }, // Example: total absent days
-  { name: "Leave", value: 20 }, // Example: total leave days
-  { name: "Half-Day", value: 15 }, // Example: total half-day days
+  { name: "Present", value: 120 },
+  { name: "Absent", value: 40 },
+  { name: "Leave", value: 20 },
+  { name: "Half-Day", value: 15 },
 ];
 
 const Overview = () => {
   const monthlySalaryData = [
-    {
-      month: "Jan",
-      salary: 5000,
-    },
-    {
-      month: "Feb",
-      salary: 4800,
-    },
-    {
-      month: "Mar",
-      salary: 5100,
-    },
-    {
-      month: "Apr",
-      salary: 5200,
-    },
-    {
-      month: "May",
-      salary: 5300,
-    },
-    {
-      month: "Jun",
-      salary: 5400,
-    },
-    {
-      month: "Jul",
-      salary: 5500,
-    },
-    {
-      month: "Aug",
-      salary: 5600,
-    },
-    {
-      month: "Sep",
-      salary: 5700,
-    },
-    {
-      month: "Oct",
-      salary: 5800,
-    },
-    {
-      month: "Nov",
-      salary: 5900,
-    },
-    {
-      month: "Dec",
-      salary: 6000,
-    },
+    { month: "Jan", salary: 5000 },
+    { month: "Feb", salary: 4800 },
+    { month: "Mar", salary: 5100 },
+    { month: "Apr", salary: 5200 },
+    { month: "May", salary: 5300 },
+    { month: "Jun", salary: 5400 },
+    { month: "Jul", salary: 5500 },
+    { month: "Aug", salary: 5600 },
+    { month: "Sep", salary: 5700 },
+    { month: "Oct", salary: 5800 },
+    { month: "Nov", salary: 5900 },
+    { month: "Dec", salary: 6000 },
   ];
 
   const onPieEnter = (_, index) => {
     console.log(`Mouse entered slice: ${index}`);
   };
 
+  const [open, setOpen] = useState(false);  // Start with modal closed
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const isLoggedIn = localStorage.getItem("isLoggedIn");
+    if (!isLoggedIn) {
+      setOpen(true);  // Open the modal if not logged in
+    }
+  }, []);
+
+  const handleClose = () => {
+    setOpen(false);
+    localStorage.setItem("isLoggedIn", "true");  // Set logged in status
+  };
+
+  const handleLogin = () => {
+    navigate(ROUTES.LOGIN);
+    handleClose();
+  };
+
   return (
     <div className="overview">
+      <Modal
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <Box sx={style}>
+          <p>
+            Please log in to access the data. Without logging in, you cannot access any data.
+          </p>
+          <div style={{ textAlign: "center" }}>
+            <button onClick={handleLogin} style={{ background: "#007aff", padding: "8px 35px", color: "#ffffff", borderRadius: "8px", border: "none", marginTop: "2rem" }}>
+              Login
+            </button>
+          </div>
+        </Box>
+      </Modal>
       <Grid container spacing={2}>
-        <Grid item sm={6}>
+        <Grid item xs={12} sm={6}>
           <div className="over_profile">
             <img
               src="https://w0.peakpx.com/wallpaper/592/1017/HD-wallpaper-memoji-emoji-album-artwork-cover-art-emoji-stickers-iphone-boy-emoji.jpg"
@@ -106,12 +117,12 @@ const Overview = () => {
               className="over_profile_img"
             />
             <div className="overview_text">
-              <h3>Welcome Back, Shanrin 👋 </h3>
+              <h3>Welcome Back, Shanrin 👋</h3>
               <p>Have a Great Day and Keep Smiling! 😊</p>
             </div>
           </div>
         </Grid>
-        <Grid item sm={6}>
+        <Grid item xs={12} sm={6}>
           <div className="overview_birthday">
             <div className="card">
               <div className="overview_birth_text">
@@ -133,7 +144,7 @@ const Overview = () => {
             </div>
           </div>
         </Grid>
-        <Grid item sm={3}>
+        <Grid item xs={12} sm={6} md={3}>
           <div className="overview_card_text">
             <div className="card">
               <div className="overview_text_value">
@@ -159,7 +170,7 @@ const Overview = () => {
             </div>
           </div>
         </Grid>
-        <Grid item sm={3}>
+        <Grid item xs={12} sm={6} md={3}>
           <div className="overview_card_text">
             <div className="card">
               <div className="overview_text_value">
@@ -185,7 +196,7 @@ const Overview = () => {
             </div>
           </div>
         </Grid>
-        <Grid item sm={3}>
+        <Grid item xs={12} sm={6} md={3}>
           <div className="overview_card_text">
             <div className="card">
               <div className="overview_text_value">
@@ -211,7 +222,7 @@ const Overview = () => {
             </div>
           </div>
         </Grid>
-        <Grid item sm={3}>
+        <Grid item xs={12} sm={6} md={3}>
           <div className="overview_card_text">
             <div className="card">
               <div className="overview_text_value">
@@ -237,7 +248,7 @@ const Overview = () => {
             </div>
           </div>
         </Grid>
-        <Grid item sm={6}>
+        <Grid item xs={12} sm={12}>
           <div className="card">
             <h3 style={{ marginBottom: "8px" }}>Income Analysis</h3>
             <div className="customer_chart1" style={{ height: "300px" }}>
@@ -278,7 +289,7 @@ const Overview = () => {
             </div>
           </div>
         </Grid>
-        <Grid item sm={3}>
+        <Grid item xs={12} sm={6} md={3}>
           <div className="overview_attendance">
             <div className="card">
               <h3 style={{ marginBottom: "8px" }}>Attendance</h3>
@@ -335,24 +346,7 @@ const Overview = () => {
             </div>
           </div>
         </Grid>
-        {/* <Grid item sm={3}>
-          <div className="card">
-          <h3>Map</h3>
-            <div
-              className="customer_chart3"
-              style={{ width: "15rem", height: "300px" }}
-            >
-              <VectorMap
-                {...world}
-                layerProps={{
-                  onClick: ({ target }) =>
-                    window.alert(`Country: ${target.attributes.name.value}`),
-                }}
-              />
-            </div>
-          </div>
-        </Grid> */}
-        <Grid item sm={3}>
+        <Grid item xs={12} sm={6} md={3}>
           <div className="calender-event">
             <div className="card">
               <h3>Calendar</h3>
@@ -362,12 +356,9 @@ const Overview = () => {
             </div>
           </div>
         </Grid>
-        <Grid item sm={12}>
+        <Grid item xs={12} sm={12}>
           <Calendar />
         </Grid>
-        {/* <Grid item sm={12}>
-          <AllLeaveRequest />
-        </Grid> */}
       </Grid>
     </div>
   );

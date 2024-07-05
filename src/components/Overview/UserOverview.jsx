@@ -105,7 +105,7 @@ const UseruserOverview = () => {
   return (
     <div className="useroverview">
       <Grid container spacing={2}>
-        <Grid item sm={6}>
+        <Grid item xs={12} sm={6}>
           <div className="over_profile">
             <img
               src="https://w0.peakpx.com/wallpaper/592/1017/HD-wallpaper-memoji-emoji-album-artwork-cover-art-emoji-stickers-iphone-boy-emoji.jpg"
@@ -118,7 +118,7 @@ const UseruserOverview = () => {
             </div>
           </div>
         </Grid>
-        <Grid item sm={6}>
+        <Grid item xs={12} sm={6}>
           <div className="useroverview_birthday">
             <div className="card">
               <div className="useroverview_birth_text">
@@ -140,7 +140,7 @@ const UseruserOverview = () => {
             </div>
           </div>
         </Grid>
-        <Grid item sm={3}>
+        <Grid item xs={12} sm={6} md={3}>
           <div className="useroverview_card_text">
             <div className="card">
               <div className="useroverview_text_value">
@@ -166,7 +166,7 @@ const UseruserOverview = () => {
             </div>
           </div>
         </Grid>
-        <Grid item sm={3}>
+        <Grid item xs={12} sm={6} md={3}>
           <div className="useroverview_card_text">
             <div className="card">
               <div className="useroverview_text_value">
@@ -192,7 +192,7 @@ const UseruserOverview = () => {
             </div>
           </div>
         </Grid>
-        <Grid item sm={3}>
+        <Grid item xs={12} sm={6} md={3}>
           <div className="useroverview_card_text">
             <div className="card">
               <div className="useroverview_text_value">
@@ -218,7 +218,7 @@ const UseruserOverview = () => {
             </div>
           </div>
         </Grid>
-        <Grid item sm={3}>
+        <Grid item xs={12} sm={6} md={3}>
           <div className="useroverview_card_text">
             <div className="card">
               <div className="useroverview_text_value">
@@ -244,7 +244,7 @@ const UseruserOverview = () => {
             </div>
           </div>
         </Grid>
-        <Grid item sm={6}>
+        <Grid item xs={12} md={6}>
           <div className="card">
             <h3 style={{ marginBottom: "8px" }}>Income Analysis</h3>
             <div className="customer_chart1">
@@ -271,7 +271,7 @@ const UseruserOverview = () => {
             </div>
           </div>
         </Grid>
-        <Grid item sm={3}>
+        <Grid item xs={12} sm={6} md={3}>
           <div className="useroverview_attendance">
             <div className="card">
               <h3 style={{ marginBottom: "8px" }}>Attendance</h3>
@@ -328,7 +328,7 @@ const UseruserOverview = () => {
             </div>
           </div>
         </Grid>
-        {/* <Grid item sm={3}>
+        {/* <Grid item xs={12} sm={6} md={3}>
           <div className="card">
           <h3>Map</h3>
             <div
@@ -345,7 +345,7 @@ const UseruserOverview = () => {
             </div>
           </div>
         </Grid> */}
-        <Grid item sm={3}>
+        <Grid item xs={12} sm={6} md={3}>
           <div className="calender-event">
             <div className="card">
               <h3>Calendar</h3>
@@ -355,10 +355,10 @@ const UseruserOverview = () => {
             </div>
           </div>
         </Grid>
-        <Grid item sm={12}>
+        <Grid item xs={12} sm={12}>
           <Calendar />
         </Grid>
-        {/* <Grid item sm={12}>
+        {/* <Grid item xs={12} sm={12}>
           <Profile />
         </Grid> */}
       </Grid>
