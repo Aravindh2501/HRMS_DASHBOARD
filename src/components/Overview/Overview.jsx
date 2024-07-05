@@ -2,11 +2,7 @@ import { Grid } from "@mui/material";
 import {
   RiArrowDownLine,
   RiArrowUpLine,
-  RiCarLine,
   RiCashLine,
-  RiCurrencyLine,
-  RiDiscountPercentLine,
-  RiHandbagLine,
   RiProjector2Line,
   RiUser2Line,
   RiUserLine,
@@ -30,7 +26,7 @@ import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { DateCalendar } from "@mui/x-date-pickers/DateCalendar";
 import Calendar from "../Calendar/Calendar";
-import Profile from "../Leave/AllLeaveRequest";
+import AllLeaveRequest from "../Leave/AllLeaveRequest";
 
 // Define colors for the chart
 const COLORS = ["#0088FE", "#FF8042", "#00C49F", "#FFBB28"];
@@ -369,9 +365,9 @@ const Overview = () => {
         <Grid item sm={12}>
           <Calendar />
         </Grid>
-        <Grid item sm={12}>
-          <Profile />
-        </Grid>
+        {/* <Grid item sm={12}>
+          <AllLeaveRequest />
+        </Grid> */}
       </Grid>
     </div>
   );

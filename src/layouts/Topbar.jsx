@@ -1,11 +1,11 @@
 import React from "react";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
-import { RiFullscreenLine, RiNotificationLine } from "@remixicon/react";
+import { RiFullscreenLine, RiMenu3Line, RiNotificationLine } from "@remixicon/react";
 import { useNavigate } from "react-router-dom";
 import { ROUTES } from "../constants/routeConstants";
 
-const Topbar = () => {
+const Topbar = ({ mobMenu }) => {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
   const navigate = useNavigate();
@@ -46,6 +46,9 @@ const Topbar = () => {
         </button>
         <button className="top_notfi">
           <RiNotificationLine className="icon" />
+        </button>
+        <button className="top_notfi top_menu" onClick={mobMenu}>
+          <RiMenu3Line className="icon" />
         </button>
         <div className="top_profile">
           <img
