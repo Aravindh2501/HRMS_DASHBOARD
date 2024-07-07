@@ -9,6 +9,7 @@ import {
   Box,
   Grid,
   Modal,
+  useMediaQuery,
 } from "@mui/material";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
@@ -20,9 +21,8 @@ import {
   RiDeleteBin5Line,
   RiEditLine,
 } from "@remixicon/react";
-import { style } from "../../Modal/ModelStyles";
 
-function createData(
+const createData = (image, name, department, role, degree, mobile, email, joiningDate) => ({
   image,
   name,
   department,
@@ -30,19 +30,8 @@ function createData(
   degree,
   mobile,
   email,
-  joiningDate
-) {
-  return {
-    image,
-    name,
-    department,
-    role,
-    degree,
-    mobile,
-    email,
-    joiningDate,
-  };
-}
+  joiningDate,
+});
 
 const initialRows = [
   createData(
@@ -105,6 +94,22 @@ const AllEmployee = () => {
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
+  const isMobile = useMediaQuery("(max-width:600px)");
+
+  const modalStyle = {
+    position: "absolute",
+    top: "50%",
+    left: "50%",
+    transform: "translate(-50%, -50%)",
+    width: isMobile ? "100vw" : "40vw",
+    bgcolor: "background.paper",
+    borderRadius: "14px",
+    boxShadow: 24,
+    padding: "20px",
+    height: isMobile ? "30rem" : "auto",
+    overflowY: isMobile ? "scroll" : "",
+  };
+
   return (
     <div className="allemployee">
       <div className="card">
@@ -144,38 +149,38 @@ const AllEmployee = () => {
                       aria-labelledby="modal-modal-title"
                       aria-describedby="modal-modal-description"
                     >
-                      <Box sx={style}>
+                      <Box sx={modalStyle}>
                         <h2 style={{ marginBottom: "10px" }}>Add Employee</h2>
                         <Grid container spacing={2}>
-                          <Grid item sm={6}>
+                          <Grid item xs={12} md={6}>
                             <label htmlFor="image">Image</label>
                             <input type="file" style={{ marginTop: "10px" }} />
                           </Grid>
-                          <Grid item sm={6}>
+                          <Grid item xs={12} md={6}>
                             <label htmlFor="name">Name</label>
                             <input type="text" style={{ marginTop: "10px" }} />
                           </Grid>
-                          <Grid item sm={6}>
+                          <Grid item xs={12} md={6}>
                             <label htmlFor="department">Department</label>
                             <input type="text" style={{ marginTop: "10px" }} />
                           </Grid>
-                          <Grid item sm={6}>
+                          <Grid item xs={12} md={6}>
                             <label htmlFor="role">Role</label>
                             <input type="text" style={{ marginTop: "10px" }} />
                           </Grid>
-                          <Grid item sm={6}>
+                          <Grid item xs={12} md={6}>
                             <label htmlFor="degree">Degree</label>
                             <input type="text" style={{ marginTop: "10px" }} />
                           </Grid>
-                          <Grid item sm={6}>
+                          <Grid item xs={12} md={6}>
                             <label htmlFor="mobile">Mobile</label>
                             <input type="text" style={{ marginTop: "10px" }} />
                           </Grid>
-                          <Grid item sm={6}>
+                          <Grid item xs={12} md={6}>
                             <label htmlFor="email">Email</label>
                             <input type="email" style={{ marginTop: "10px" }} />
                           </Grid>
-                          <Grid item sm={6}>
+                          <Grid item xs={12} md={6}>
                             <label htmlFor="joiningDate">Joining Date</label>
                             <LocalizationProvider
                               dateAdapter={AdapterDayjs}
