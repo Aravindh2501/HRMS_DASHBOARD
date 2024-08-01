@@ -1,4 +1,4 @@
-Project Link : zhttps://hrmsdashboardmodern.netlify.app/
+Project Link : https://hrmsdashboardmodern.netlify.app/
 
 
 # Getting Started with Create React App
